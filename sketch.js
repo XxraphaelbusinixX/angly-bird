@@ -4,7 +4,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 
 var motorDaFisica, mundo;
-var chao;
+var chao,plataforma;
 var caixa1, caixa2, caixa3,caixa4,caixa5
 var pig1,pig2
 var tronco1,tronco2,tronco3,tronco4
@@ -17,6 +17,7 @@ function setup() {
   mundo = motorDaFisica.world;
 
   chao = new Chao(600, 590, 1200, 20)
+  plataforma = new Chao(200,495,400,170)
  
   caixa1 = new Caixa(700, 320, 70, 70);
   caixa2 = new Caixa(920, 320, 70, 70);
@@ -43,6 +44,7 @@ function draw() {
   Engine.update(motorDaFisica);
 
 chao.desenha()
+plataforma.desenha()
 
 passaro.desenha();
 
