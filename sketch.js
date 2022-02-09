@@ -2,6 +2,7 @@
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
+const Constraint = Matter.Constraint
 
 var motorDaFisica, mundo;
 var chao,plataforma;
@@ -9,6 +10,7 @@ var caixa1, caixa2, caixa3,caixa4,caixa5
 var pig1,pig2
 var tronco1,tronco2,tronco3,tronco4
 var passaro;
+var estilingue;
 
 function setup() {
   createCanvas(1200, 600);
@@ -33,13 +35,14 @@ function setup() {
   tronco3 = new Tronco(760, 120, 150, PI/7)
   tronco4 = new Tronco(870, 120, 150, -PI/7)
 
-  passaro = new Passaro(200,200)
+  passaro = new Passaro(200,300)
 
+estilingue = new Estilingue(passaro.corpo,{x:200,y:100})
 }
 
 
 function draw() {
-  background("black");
+  background("white");
 
   Engine.update(motorDaFisica);
 
@@ -61,4 +64,10 @@ passaro.desenha();
   tronco3.desenha();
   tronco4.desenha();
   caixa5.desenha();
+  estilingue.desenha();
+
 }
+
+function mouseDragged(){
+  Matter.Body.setPosition(passaro.corpo,{x:mouseX,y:mouseY})
+  }

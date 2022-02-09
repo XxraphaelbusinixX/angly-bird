@@ -11,9 +11,9 @@ class Passaro extends Base {
     }
     // funcoes / metodos
     desenha() {
-    var posicao = this.corpo.position
-    posicao.x = mouseX 
-    posicao.y = mouseY
+   // var posicao = this.corpo.position//
+   // posicao.x = mouseX //
+   // posicao.y = mouseY//
    super.desenha();
     }
   }
