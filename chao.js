@@ -7,12 +7,14 @@ constructor(x ,y ,largura, altura){
       this.corpo = Bodies.rectangle(x, y, largura, altura, opcoes);
       this.altura = altura;
       this.largura = largura;
+      this.imagem = loadImage("sprites/base.png")
       World.add(mundo, this.corpo);
 }
 
 desenha(){
-    fill("brown");
-    rectMode(CENTER);
-    rect(this.corpo.position.x, this.corpo.position.y, this.largura, this.altura);
+    push()
+    imageMode(CENTER);
+    image(this.imagem,this.corpo.position.x, this.corpo.position.y, this.largura, this.altura);
+    pop()
 }
 }
